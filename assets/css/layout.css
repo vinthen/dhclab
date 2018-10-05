@@ -110,17 +110,19 @@ bottom:0;
 .backTop {width:50px; height:50px;
 position:absolute; left:0; bottom:15px;
 background-image:url("../images/icon-home.png"); background-repeat:no-repeat;
-background-size:100px auto; background-position:17px -55px;
+background-size:100px auto; background-position:17px -75px;
 cursor:pointer;
 }
 
 .menu--overlay {position:fixed; left:0; top:0;
 width:100%; height:100%; z-index:-1000;
 background-color:rgba(0,0,0,.32);
-opacity:0; pointer-events:none;
-transition:1600ms; transition-property:opacity;
+opacity:0; pointer-events:none; visibility:hidden;
+transition:1600ms; transition-property:opacity,visibility;
 }
-.expand .menu--overlay {opacity:1; pointer-events:auto; z-index:auto;}
+.expand .menu--overlay {opacity:1; pointer-events:auto; visibility:visible;
+z-index:auto;
+}
 
 .menu--container {position:absolute; right:-360px; top:0;
 width:300px; height:100%; padding-right:50px;
@@ -206,8 +208,27 @@ box-shadow:0 0 6px rgba(0,0,0,.4);
 font-size:19px; font-weight:500;
 }
 .entry p {font-size:14px; color:#5e6576; line-height:1.6;}
-/* .entry:hover p {color:#215e7f;} */
 .entry p+p {margin-top:10px;}
+
+.readMore {display:flex; justify-content:center; align-items:center;
+width:138px; height:38px; margin:40px auto 0 auto;
+color:#25324d; font-size:14px; font-weight:bold; 
+text-transform:uppercase; letter-spacing:2px;
+background-color:#fff; border-radius:20px;
+box-shadow:0 0 2px rgba(0,0,0,.1);
+cursor:pointer;
+transition:300ms; transition-property:box-shadow;
+}
+.readMore:hover {box-shadow:0 0 6px rgba(0,0,0,.12);}
+
+.readMore i {display:block; width:22px; height:11px; margin-left:7px;
+background-image:url("../images/icon-home.png"); background-repeat:no-repeat;
+background-size:100px auto; background-position:1px -164px;
+/* transition:300ms; transition-property:margin-left; */
+}
+/* .readMore:hover i {margin-left:3px;} */
+
+
 
 /* ----- 最新文章 ----- */
 .recentPost .centerwpr {padding:60px 0;
