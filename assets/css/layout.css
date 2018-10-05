@@ -62,6 +62,10 @@ font-size:15px; font-weight:normal; letter-spacing:4.7px; line-height:1;
 /* ==================== Menu ==================== */
 .menu {position:fixed; right:0; top:0; z-index:999;
 width:50px; height:100%;
+}
+
+.menu--bar {position:absolute; right:0; top:0;
+width:100%; height:100%;
 background-color:#fbfbfb;
 box-shadow:0 0 0 1px rgba(0,0,0,.02);
 }
@@ -80,14 +84,28 @@ cursor:pointer;
 .hamburger--icon {width:26px; height:2px;
 position:absolute; left:50%; top:50%; margin-left:-13px; margin-top:-1px;
 background-color:#25324d;
+pointer-events:none;
 }
 .hamburger--icon:before,
 .hamburger--icon:after {content:""; display:block; width:100%; height:2px;
 position:absolute; left:0;
 background-color:#25324d;
+transition:300ms; transition-property:top,bottom,transform;
 }
 .hamburger--icon:before {top:-11px;}
 .hamburger--icon:after {bottom:-11px;}
+
+.expand .hamburger--icon {
+background-color:transparent;
+}
+.expand .hamburger--icon:before {transform:rotate(-45deg);
+top:0;
+}
+.expand .hamburger--icon:after {transform:rotate(45deg);
+bottom:0;
+}
+
+
 
 .backTop {width:50px; height:50px;
 position:absolute; left:0; bottom:15px;
@@ -95,6 +113,46 @@ background-image:url("../images/icon-home.png"); background-repeat:no-repeat;
 background-size:100px auto; background-position:17px -55px;
 cursor:pointer;
 }
+
+.menu--overlay {position:fixed; left:0; top:0;
+width:100%; height:100%; z-index:-1000;
+background-color:rgba(0,0,0,.32);
+opacity:0; pointer-events:none;
+transition:1600ms; transition-property:opacity;
+}
+.expand .menu--overlay {opacity:1; pointer-events:auto; z-index:auto;}
+
+.menu--container {position:absolute; right:-360px; top:0;
+width:300px; height:100%; padding-right:50px;
+display:flex; justify-content:center; align-items:center;
+background-color:rgba(246,246,246,.97);    
+transition:300ms; transition-property:right;
+}
+.expand .menu--container {right:0;}
+
+.menu--content {width:100%;}
+
+.menu--btn {display:block; height:72px; margin:0 25px;
+display:flex; align-items:center; flex-wrap:wrap;
+border-bottom:1px solid #d4d2d2;
+}
+.menu--btn+.menu--btn {border-top:1px solid #fff;}
+
+.menu--btn:last-child {border-bottom:none;}
+
+.menu--box {padding-left:22px;
+transition:300ms; transition-property:padding-left;
+}
+.menu--btn:hover .menu--box {padding-left:32px;}
+
+.menu--box span {display:block; line-height:1;}
+.menu--btn .zh {margin-bottom:5px;
+font-size:18px; color:#25324d; letter-spacing:4px; font-weight:500;
+}
+.menu--btn .en {
+font-size:12px; color:#717171; letter-spacing:2px;
+}
+
 
 
 
@@ -126,7 +184,7 @@ background-color:#25324d;
 .home-block .container {display:flex; flex-wrap:wrap; justify-content:space-between;
 }
 
-.entry {margin-top:40px;
+.entry {margin-top:40px; margin-bottom:10px;
 width:calc(25% - 30px);
 color:#25324d;
 }
@@ -135,6 +193,7 @@ color:#25324d;
 font-size:13px; font-style:italic;
 }
 .entry .imgwpr {width:100%; padding-top:66.67%; margin-bottom:20px;
+position:relative;    
 background-size:cover; background-position:center center;
 background-repeat:no-repeat;
 transition:400ms; transition-property:box-shadow,opacity;
@@ -164,12 +223,17 @@ display:flex; flex-wrap:wrap; justify-content:space-between;
 .recentPost .regular-post .entry {width:calc(50% - 20px);}
 
 /* .recentPost .imgwpr {margin-bottom:20px;} */
-
+.entry--tag {height:30px; padding:0 20px;
+position:absolute; left:0; bottom:0;    
+display:flex; justify-content:center; align-items:center;
+color:#fff;    
+background-color:#2d6974;
+}
 
 
 
 /* ----- 技術筆記 ----- */
-.dTech {margin:0 -15px;
+.dTech {margin:0 -15px; padding:0 15px;
 background-color:#e5e5e5;     
 }
 

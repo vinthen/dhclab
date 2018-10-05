@@ -90,10 +90,23 @@
 /*!****************************!*\
   !*** ./assets/js/index.js ***!
   \****************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-eval("console.log('webpack ready!');\n\n//# sourceURL=webpack:///./assets/js/index.js?");
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _menu__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./menu */ \"./assets/js/menu.js\");\n\n/* ----- Menu control ----- */\n\nObject(_menu__WEBPACK_IMPORTED_MODULE_0__[\"menuControl\"])(document.querySelector('.menu'));\n\n//# sourceURL=webpack:///./assets/js/index.js?");
+
+/***/ }),
+
+/***/ "./assets/js/menu.js":
+/*!***************************!*\
+  !*** ./assets/js/menu.js ***!
+  \***************************/
+/*! exports provided: menuControl */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"menuControl\", function() { return menuControl; });\n/* ==================== Menu ==================== */\nvar menuControl = function menuControl(wrapper) {\n  wrapper.querySelector('.hamburger').addEventListener('click', function () {\n    wrapper.classList.toggle('expand');\n  });\n  wrapper.querySelector('.menu--overlay').addEventListener('click', function () {\n    wrapper.classList.remove('expand');\n  });\n  wrapper.querySelector('.backTop').addEventListener('click', function () {\n    window.scroll({\n      top: 0,\n      left: 0,\n      behavior: 'smooth'\n    });\n  });\n};\n\n//# sourceURL=webpack:///./assets/js/menu.js?");
 
 /***/ })
 
