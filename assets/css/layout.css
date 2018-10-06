@@ -30,13 +30,13 @@ text-align:left;
 margin:0 auto;
 }
 
-.main {flex:1; padding:0 15px;}
+.main {flex:1; padding:0 20px;}
 
 
 
 /* ==================== Header ==================== */
 .header .centerwpr {height:100px;
-display:flex; align-items:center;
+display:flex; align-items:center; justify-content:space-between;
 }
 .header--logo {height:42px; position:relative;
 display:flex; align-items:center;    
@@ -56,6 +56,47 @@ font-size:22px; letter-spacing:6px; line-height:1;
 font-size:15px; font-weight:normal; letter-spacing:4.7px; line-height:1;
 }
 
+/* menu bar (Mobile) header logo */
+.menu--bar .header--logo {display:none; height:100%; position:absolute;}
+.menu--bar .header--logo:before {width:54px; height:100%; margin-right:12px;
+border-radius:0; background-position:5px 4px;
+}
+.menu--bar .header--logo h1 {margin-bottom:3px;
+font-size:18px; letter-spacing:3.3px;
+}
+.menu--bar .header--logo h2 {font-size:13px; letter-spacing:2px;}
+
+
+/* ==================== Search ==================== */
+.searchwpr {height:30px; position:relative;
+/* display:inline-flex; align-items:center;     */
+padding-left:30px;
+background-image:url("../images/icon-home.png"); background-repeat:no-repeat;
+background-size:80px auto; background-position:0 -223px;
+}
+.search-input {padding:4px 2px; width:70px;
+font-family:inherit; font-size:14px; font-weight:inherit; 
+color:#4a546a; line-height:1;
+background-color:transparent; border:none;    
+border-bottom:1px solid transparent;
+transition:300ms; transition-property:width, border-color;
+}
+.search-input:focus {outline:none; width:140px;
+border-bottom:1px solid #9a9fab;
+}
+
+/* Menu Search input */
+.menu--content .searchwpr {height:72px; margin:0 25px;
+padding-left:50px;    
+display:flex; align-items:center;
+border-top:1px solid #fff;
+background-size:80px auto; background-position:22px -203px;
+}
+.menu--content .search-input {width:100%;}
+.menu--content .search-input:focus {width:100%;
+border-bottom:1px solid transparent;
+}
+
 
 
 
@@ -70,7 +111,7 @@ background-color:#fbfbfb;
 box-shadow:0 0 0 1px rgba(0,0,0,.02);
 }
 
-.menu--title {width:100%; padding:17px 0;
+.menu--about {width:100%; padding:17px 0;
 display:flex; justify-content:center; align-items:center;    
 color:#fff; line-height:1; font-size:15px; writing-mode:vertical-rl;
 letter-spacing:1px;
@@ -106,7 +147,6 @@ bottom:0;
 }
 
 
-
 .backTop {width:50px; height:50px;
 position:absolute; left:0; bottom:15px;
 background-image:url("../images/icon-home.png"); background-repeat:no-repeat;
@@ -124,7 +164,7 @@ transition:1600ms; transition-property:opacity,visibility;
 z-index:auto;
 }
 
-.menu--container {position:absolute; right:-360px; top:0;
+.menu--container {position:fixed; right:-360px; top:0;
 width:300px; height:100%; padding-right:50px;
 display:flex; justify-content:center; align-items:center;
 background-color:rgba(246,246,246,.97);    
@@ -134,13 +174,11 @@ transition:300ms; transition-property:right;
 
 .menu--content {width:100%;}
 
-.menu--btn {display:block; height:72px; margin:0 25px;
+.menu--btn {height:72px; margin:0 25px;
 display:flex; align-items:center; flex-wrap:wrap;
 border-bottom:1px solid #d4d2d2;
 }
 .menu--btn+.menu--btn {border-top:1px solid #fff;}
-
-.menu--btn:last-child {border-bottom:none;}
 
 .menu--box {padding-left:22px;
 transition:300ms; transition-property:padding-left;
@@ -155,7 +193,7 @@ font-size:18px; color:#25324d; letter-spacing:4px; font-weight:500;
 font-size:12px; color:#717171; letter-spacing:2px;
 }
 
-
+.menu--btn.About {display:none;}
 
 
 /* ==================== Footer ==================== */
@@ -164,7 +202,8 @@ display:flex; justify-content:center; align-items:center;
 color:#fff; font-size:11px;
 background-color:#25324d;
 }
-.footer .rights {letter-spacing:2px;}
+.footer .centerwpr {padding:0 20px;}
+.footer .rights {letter-spacing:2px; text-align:center; line-height:1.2;}
 
 
 
@@ -186,7 +225,7 @@ background-color:#25324d;
 .home-block .container {display:flex; flex-wrap:wrap; justify-content:space-between;
 }
 
-.entry {margin-top:40px; margin-bottom:10px;
+.entry {display:block; margin-top:40px; margin-bottom:10px;
 width:calc(25% - 30px);
 color:#25324d;
 }
@@ -236,7 +275,7 @@ background-color:#fff;
 }
 .recentPost .container {flex-wrap:nowrap; justify-content:space-evenly;}
 
-.entry.top-story {width:520px; padding:0 40px;}
+.entry.top-story {width:38%; padding:0 40px;}
 
 .recentPost .regular-post {flex:1; padding-right:40px;
 display:flex; flex-wrap:wrap; justify-content:space-between;
@@ -254,7 +293,7 @@ background-color:#2d6974;
 
 
 /* ----- 技術筆記 ----- */
-.dTech {margin:0 -15px; padding:0 15px;
+.home-block.dTech {margin:0 -20px; padding:0 20px;
 background-color:#e5e5e5;     
 }
 
